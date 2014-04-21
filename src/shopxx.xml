@@ -2,14 +2,14 @@
 <!-- 配置网站信息以及作者 -->
 <shopxx> 
 	<setting name="siteName" value="SHOUSU建材商城"/>  
-	<setting name="siteUrl" value="http://localhost:8080/shopxx"/>  
-	<setting name="logo" value="/shopxx/upload/image/logo.gif"/>  
-	<setting name="hotSearch" value="T恤,衬衫,西服,西裤,森马,七匹狼,梵希蔓,春夏新款,牛仔裤"/>  
-	<setting name="address" value="湖南长沙经济技术开发区"/>  
-	<setting name="phone" value="400-8888888"/>  
+	<setting name="siteUrl" value="www.shousu.net"/>  
+	<setting name="logo" value="/shopxx/upload/image/logo.jpg"/>  
+	<setting name="hotSearch" value="沙发,管道,锁具,吊灯,台灯"/>  
+	<setting name="address" value="北京市丰台区马家楼"/>  
+	<setting name="phone" value="010-6694123"/>  
 	<setting name="zipCode" value="400000"/>  
 	<setting name="email" value="service@shopxx.net"/>  
-	<setting name="certtext" value="湘ICP备10000000号"/>  
+	<setting name="certtext" value="京ICP备14015013号"/>  
 	<setting name="isSiteEnabled" value="true"/>  
 	<setting name="siteCloseMessage" value="&lt;dl&gt;&lt;dt&gt;网站维护中，暂时无法访问！&lt;/dt&gt;&lt;dd&gt;本网站正在进行系统维护和技术升级，网站暂时无法访问，敬请谅解！&lt;/dd&gt;&lt;/dl&gt;"/>  
 	<setting name="largeProductImageWidth" value="800"/>  
@@ -18,9 +18,9 @@
 	<setting name="mediumProductImageHeight" value="300"/>  
 	<setting name="thumbnailProductImageWidth" value="170"/>  
 	<setting name="thumbnailProductImageHeight" value="170"/>  
-	<setting name="defaultLargeProductImage" value="/shopxx-3.0Beta/upload/image/default_large.jpg"/>  
-	<setting name="defaultMediumProductImage" value="/shopxx-3.0Beta/upload/image/default_medium.jpg"/>  
-	<setting name="defaultThumbnailProductImage" value="/shopxx-3.0Beta/upload/image/default_thumbnail.jpg"/>  
+	<setting name="defaultLargeProductImage" value="/shousu/upload/image/default_large.jpg"/>  
+	<setting name="defaultMediumProductImage" value="/shousu/upload/image/default_medium.jpg"/>  
+	<setting name="defaultThumbnailProductImage" value="/shousu/upload/image/default_thumbnail.jpg"/>  
 	<setting name="watermarkAlpha" value="50"/>  
 	<setting name="watermarkImage" value="/upload/image/watermark.png"/>  
 	<setting name="watermarkPosition" value="bottomRight"/>  
