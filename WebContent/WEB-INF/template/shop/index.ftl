@@ -130,7 +130,9 @@ $().ready(function() {
 		</div>
 		[#-- 品牌，产品 start --]
 		<div class="span18">
-			[#-- 热门品牌 --]
+			[#-- 热门品牌 --]<!--热门品牌 -->
+			
+			<!--
 			<div class="hotBrand clearfix">
 				<div class="title">
 					[#-- 所有品牌链接 --]
@@ -149,6 +151,9 @@ $().ready(function() {
 					[/@brand_list]
 				</ul>
 			</div>
+			-->
+			
+			
 			[#-- 热门品牌  end--]
 			[#-- 热门产品分类 start --]
 			<div class="hotProductCategory">
@@ -179,6 +184,7 @@ $().ready(function() {
 			[#-- 热门产品分类 end --]
 		</div>
 		[#-- 品牌，产品 end --]
+		<!--促销商品列表 start-->
 		<div class="span6 last">
 			<div id="promotionProduct" class="promotionProduct">
 				<ul class="tab">
@@ -240,9 +246,17 @@ $().ready(function() {
 				</ul>
 			</div>
 		</div>
+		<!--促销商品列表 end-->
+		<!-- 中部 广告 start-->
+		<!-- 
 		<div class="span24">
 			[@ad_position id = 5 /]
 		</div>
+		-->
+		
+		<!-- 中部 广告 end-->
+		<!-- 热门商品 start-->
+		<!-- 
 		<div class="span24">
 			<div id="hotProduct" class="hotProduct clearfix">
 				[@product_category_root_list count = 3]
@@ -274,6 +288,10 @@ $().ready(function() {
 				[/@product_category_root_list]
 			</div>
 		</div>
+		-->
+		
+		<!-- 热门商品 end-->
+		<!-- 最新商品 start-->
 		<div class="span24">
 			<div id="newProduct" class="newProduct clearfix">
 				[@product_category_root_list count = 3]
@@ -305,6 +323,8 @@ $().ready(function() {
 				[/@product_category_root_list]
 			</div>
 		</div>
+		<!-- 最新商品 end-->
+		<!-- 友好链接 start-->
 		<div class="span24">
 			<div class="friendLink">
 				<dl>
@@ -323,6 +343,7 @@ $().ready(function() {
 				</dl>
 			</div>
 		</div>
+		<!-- 友好链接商品 end-->
 	</div>
 	[#include "/shop/include/footer.ftl" /]
 </body>
