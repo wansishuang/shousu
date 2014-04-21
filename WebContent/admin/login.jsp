@@ -211,7 +211,7 @@ if (applicationContext != null) {
 						</td>
 					</tr>
 				</table>
-				<div class="powered">COPYRIGHT © 2005-2013 SHOPXX.NET ALL RIGHTS RESERVED.</div>
+				<div class="powered">COPYRIGHT © 2014 SHOPXX.NET ALL RIGHTS RESERVED.</div>
 				<div class="link">
 					<a href="<%=base%>/"><%=SpringUtils.getMessage("admin.login.home")%></a> |
 					<a href="http://www.shopxx.net"><%=SpringUtils.getMessage("admin.login.official")%></a> |
