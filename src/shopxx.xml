@@ -3,7 +3,7 @@
 <shopxx> 
 	<setting name="siteName" value="SHOUSU建材商城"/>  
 	<setting name="siteUrl" value="www.shousu.net"/>  
-	<setting name="logo" value="/shopxx/upload/image/logo.jpg"/>  
+	<setting name="logo" value="/shousu/upload/image/logo.jpg"/>  
 	<setting name="hotSearch" value="沙发,管道,锁具,吊灯,台灯"/>  
 	<setting name="address" value="北京市丰台区马家楼"/>  
 	<setting name="phone" value="010-6694123"/>  
