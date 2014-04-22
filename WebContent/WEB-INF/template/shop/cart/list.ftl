@@ -232,7 +232,7 @@ $().ready(function() {
 						<tr>
 							<td width="60">
 								<input type="hidden" name="id" value="${cartItem.id}" />
-								<img src="[#if cartItem.product.thumbnail??]${cartItem.product.thumbnail}[#else]${setting.defaultThumbnailProductImage}[/#if]" alt="${cartItem.product.name}" />
+								<img src="[#if cartItem.product.thumbnail]${cartItem.product.thumbnail}[#else]${setting.defaultThumbnailProductImage}[/#if]" alt="${cartItem.product.name}" />
 							</td>
 							<td>
 								<a href="${base}${cartItem.product.path}" title="${cartItem.product.fullName}" target="_blank">${abbreviate(cartItem.product.fullName, 60, "...")}</a>
@@ -241,7 +241,7 @@ $().ready(function() {
 								[/#if]
 							</td>
 							<td>
-								${currency(cartItem.unitPrice, true)}
+								${currency(cartItem.price, true)}
 							</td>
 							<td class="quantity" width="60">
 								<input type="text" name="quantity" value="${cartItem.quantity}" maxlength="4" />
@@ -276,7 +276,7 @@ $().ready(function() {
 						[/#list]
 					</em>
 					${message("shop.cart.point")}: <em id="point">${cart.point}</em>
-					${message("shop.cart.amount")}: <strong id="amount">${currency(cart.amount, true, true)}</strong>
+					${message("shop.cart.amount")}: <strong id="amount">${currency(cart.effectivePrice, true, true)}</strong>
 				</div>
 				<div class="bottom">
 					<a href="javascript:;" id="clear" class="clear">${message("shop.cart.clear")}</a>
