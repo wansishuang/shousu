@@ -1,3 +1,4 @@
+<script type="text/javascript" src="${base}/resources/shop/js/jquery.js"></script>
 <script type="text/javascript">
 $().ready(function() {
 	var $headerLogin = $("#headerLogin");
@@ -101,13 +102,14 @@ $().ready(function() {
             <!--logo end-->
             <div class="search">
     			<form id="productSearchForm" action="${base}/product/search.jhtml" method="get">
+    			
 					<input name="keyword" class="keyword" value="${productKeyword!message("shop.header.keyword")}" maxlength="30" />
-					<input type="submit"  class="btn" value="" />
+					
 				</form>
             </div>
             <!--search end-->
             <!-- 购物车 cart -->
-            <div class="shopping">
+            <div class="shopping" >
             	<a href="${base}/cart/list.jhtml">${message("shop.header.cart")}</a>
             </div>
             <!-- 购物车 cart End-->
