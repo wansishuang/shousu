@@ -16,40 +16,24 @@
 	[/#if]
 [/@seo]
 <link rel="icon" href="${base}/favicon.ico" type="image/x-icon" />
-<!--<link href="${base}/resources/shop/slider/slider.css" rel="stylesheet" type="text/css" />-->
+<link href="${base}/resources/shop/slider/slider.css" rel="stylesheet" type="text/css" />
 <link href="${base}/resources/shop/css/common.css" rel="stylesheet" type="text/css" />
 <link href="${base}/resources/shop/css/index.css" rel="stylesheet" type="text/css" />
 
-<!--/*DIY*/-->
-<link href="${base}/resources/shop/css/common_xf.css" rel="stylesheet" type="text/css" />
-<link href="${base}/resources/shop/css/index_xf.css" rel="stylesheet" type="text/css" />
-
 <script type="text/javascript" src="${base}/resources/shop/js/jquery.js"></script>
 <script type="text/javascript" src="${base}/resources/shop/js/jquery.tools.js"></script>
-<!--<script type="text/javascript" src="${base}/resources/shop/slider/slider.js"></script>-->
+<script type="text/javascript" src="${base}/resources/shop/slider/slider.js"></script>
 <script type="text/javascript" src="${base}/resources/shop/js/common.js"></script>
 
 <!--/*DIY*/-->
-<script type="text/javascript" src="${base}/resources/shop/js/jquery.Xslider.js"></script>
+<!--<script type="text/javascript" src="${base}/resources/shop/js/jquery.Xslider.js"></script>-->
 <script type="text/javascript" src="${base}/resources/shop/js/jquery.lazyload.js"></script>
 
 <script type="text/javascript">
 $().ready(function() {
-	//diy
-	$("#slider3").Xslider({
-		affect:'fade',
-		ctag: 'div'
-	});
 	
+	/* 滑动效果 */
 	var $slider = $("#slider");
-	var $newArticleTab = $("#newArticle .tab");
-	var $promotionProductTab = $("#promotionProduct .tab");
-	var $promotionProductInfo = $("#promotionProduct .info");
-	var $hotProductTab = $("#hotProduct .tab");
-	var $newProductTab = $("#newProduct .tab");
-	//diy
-	var $hotProductImage = $("#hotProduct img");
-	var $newProductImage = $("#newProduct img");
 	
 	$slider.nivoSlider({
 		effect: "random",
@@ -60,27 +44,39 @@ $().ready(function() {
 		captionOpacity: 0.4
 	});
 	
+	
+	/* 新文章效果 */
+	var $newArticleTab = $("#newArticle .tab");
 	$newArticleTab.tabs("#newArticle .tabContent", {
 		tabs: "li",
 		event: "mouseover",
 		initialIndex: 1
 	});
 	
+	/* 商城促销活动 */
+	var $promotionProductTab = $("#promotionProduct .tab");
 	$promotionProductTab.tabs("#promotionProduct .tabContent", {
 		tabs: "li",
 		event: "mouseover"
 	});
 	
+	
+	/* 销量热的产品 */
+	var $hotProductTab = $("#hotProduct .tab");
 	$hotProductTab.tabs("#hotProduct .tabContent", {
 		tabs: "li",
 		event: "mouseover"
 	});
 	
+	/* 新产品标签  */
+	var $newProductTab = $("#newProduct .tab");
 	$newProductTab.tabs("#newProduct .tabContent", {
 		tabs: "li",
 		event: "mouseover"
 	});
 	
+	/* 商城促销活动信息 */
+	var $promotionProductInfo = $("#promotionProduct .info");
 	function promotionInfo() {
 		$promotionProductInfo.each(function() {
 			var $this = $(this);
@@ -125,12 +121,14 @@ $().ready(function() {
 	<div class="container index">
 		[#-- 轮播广告 --]
 		<!-- 轮播广告 -->
-		<div class="span18">
+		<!-- span25 width:990px -->
+		<div class="span24">
 			[@ad_position id = 3 /]
 		</div>
 		
 		[#-- 新文章模块，，广告右边div --]
 		<!-- 新文章模块，，广告右边div -->
+		<!--
 		<div class="span6 last">
 			<div id="newArticle" class="newArticle">
 				[@article_category_root_list count = 3]
@@ -158,7 +156,11 @@ $().ready(function() {
 			</div>
 			[#--文章底部广告，春季新品 --]
 			[@ad_position id = 4 /]
-		</div>
+			</div>
+		-->
+		
+			
+		
 		[#-- 品牌，产品 start --]
 		<div class="span18">
 			[#-- 热门品牌 --]<!--热门品牌 -->
