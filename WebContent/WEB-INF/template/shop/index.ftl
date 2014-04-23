@@ -19,10 +19,20 @@
 <link href="${base}/resources/shop/slider/slider.css" rel="stylesheet" type="text/css" />
 <link href="${base}/resources/shop/css/common.css" rel="stylesheet" type="text/css" />
 <link href="${base}/resources/shop/css/index.css" rel="stylesheet" type="text/css" />
+
+<!--/*DIY*/-->
+<link href="${base}/resources/shop/css/common_xf.css" rel="stylesheet" type="text/css" />
+<link href="${base}/resources/shop/css/index_xf.css" rel="stylesheet" type="text/css" />
+
 <script type="text/javascript" src="${base}/resources/shop/js/jquery.js"></script>
 <script type="text/javascript" src="${base}/resources/shop/js/jquery.tools.js"></script>
-<script type="text/javascript" src="${base}/resources/shop/slider/slider.js"></script>
+<!--<script type="text/javascript" src="${base}/resources/shop/slider/slider.js"></script>-->
 <script type="text/javascript" src="${base}/resources/shop/js/common.js"></script>
+
+<!--/*DIY*/-->
+<script type="text/javascript" src="${base}/resources/shop/js/jquery.Xslider.js"></script>
+<script type="text/javascript" src="${base}/resources/shop/js/jquery.lazyload.js"></script>
+
 <script type="text/javascript">
 $().ready(function() {
 

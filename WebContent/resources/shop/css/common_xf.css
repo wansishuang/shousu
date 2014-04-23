@@ -1,0 +1,114 @@
+@charset "utf-8";
+/* CSS Document */
+
+body, button, input, select, textarea {
+    font: 12px/1.125 "宋体", Arial,Helvetica,sans-serif;
+}
+body,html,div, h1, h2, h3, h4, h5, h6, dl, dt, dd, ul, ol, li, th, td, p, blockquote, pre, form, fieldset, legend, input, button, textarea, hr {
+    margin: 0;
+    padding: 0;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+li {
+    list-style: none outside none; 
+}
+fieldset, img {
+    border: 0 none;
+}
+input, textarea {
+    outline-style: none;
+	resize:none;
+ 	outline:none;
+	border:none 0;
+}
+a {
+    text-decoration: none;
+	bblr:expression(this.onFocus=this.blur());/*IE使用*/
+	outline-style:none;/*FF使用*/
+}
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.top .header .nav{width:756px;height:38px;float:right;}
+.top .header .classify{width:236px;height:457px;position:absolute;top:121px;left:0px;z-index:999;}
+.top .header .classify h1{width:216px;height:39px;padding-left:20px;color:#653114;font:bold 14px/39px "宋体";background:url(../images/fl_15.png) no-repeat;}
+.top .header .classify .p_list{width:100%;height:416px;background:white;padding-top:2px;border-bottom:1px solid #d3d3d3;}
+.top .header .classify dl{width:202px;height:52px;margin:0 auto;color:#636363;line-height:22px;padding:0px 17px 0;}
+.top .header .classify dl dt{padding-top:5px;}
+.top .header .classify dl dt b{color:#333333;}
+.top .header .classify dl a{color:#636363;}
+/*全部商品分类结束*/
+
+/*公共*/
+html{overflow-x:hidden;}
+body{background:url(../images/bodybg.png);}
+.top{width:100%;width:100%;background:url(../images/topbg.png) repeat-x;height:196px;color:white;}
+.top .header{width:990px;margin:0 auto;color:white;position:relative;z-index:500;}
+.top .header .msg{width:100%;height:30px;line-height:30px;color:white;}
+.top .header .msg .mgleft{widht:30%;float:left;color:white;}
+.top .header .msg .mgright{widht:422px;float:right;}
+.top .header .msg a{color:white;}
+.top .header .msg a b{color:#f9cd00;}
+/*msg end*/
+
+.top .header .tp{overflow:hidden;width:100%;margin-top:30px;}
+.top .header .tp .logo{float:left;margin-right:60px;line-height:10px;color:#f9cd00;width:292px;}
+.top .header .tp .logo img,.top .header .tp .logo span{float:left;}
+.top .header .tp .logo span{margin-left:8px;font:bold 14px/36px "宋体";}
+.top .header .tp .search{width:400px;height:36px;background:url(../images/search_07.png) no-repeat;padding-left:11px;float:left;}
+.top .header .tp .tex{background:none;height:36px;width:327px;color:#969696;float:left;}
+.top .header .tp .btn{background:none;height:36px;width:73px;cursor:pointer;float:left;}
+.top .header .tp .shopping{width:108px;height:36px;background:url(../images/shoppingcar_09.png) no-repeat;float:right;padding-left:52px;font:bold 12px/36px "宋体";color:white;cursor:pointer;+line-height:36px;}
+.top .header .tp .shopping span{color:#f9cd00;font-family:Arial, Helvetica, sans-serif;}
+/*tp end*/
+
+.top .header .nav{width:756px;height:38px;float:right;}
+.top .header .nav dl dd{width:90px;height:38px;float:left;}
+.top .header .nav dl dd a{font:bold 14px/38px "宋体";color:white;display:block;text-align:center;}
+.top .header .nav dl dd a:hover{background:url(../images/lihover_03.png) no-repeat;text-decoration:underline;}
+.top .header .nav dl dt{width:2px;height:13px;background:url(../images/shu_03.png) no-repeat;margin-top:14px;float:left;}
+.top .header .nav dl dd.first a{background:url(../images/lihover_03.png) no-repeat;text-decoration:underline;}
+.top .header .recommend{width:744px;height:36px;float:right;line-height:36px;padding-left:12px;}
+.top .header .recommend a{color:#646464;}
+/*nav end*/
+
+/*头部结束*/
+
+
+.quick{overflow:hidden;width:105px;position:fixed;top:200px;right:80px;border-bottom:4px solid #4c4c4c;_position:absolute;_bottom:auto;_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))); _margin-bottom:500px;}
+.quick dl{width:100%;overflow:hidden;color:#646464;text-align:center;font:bold 12px "宋体";}
+.quick dl dt{width:100%;height:35px;background:url(../images/pftit_03.png) no-repeat;line-height:35px;font-size:14px;color:white;}
+.quick dl dd{width:101px;border-left:1px solid #c8c8c8;border-right:1px solid #c8c8c8;border-bottom:1px dotted #e0e0e0;padding:1px;height:33px;background:white;}
+.quick dl dd a{width:100%;height:100%;color:#646464;display:block;line-height:33px;}
+.quick dl dd a:hover{background:#5a5a5a;color:white;}
+.quick dl dd.returntop{padding-bottom:0px;border-bottom:none 0;}
+.quick dl dd.returntop a{background:url(../images/arrow_07.png) no-repeat 85px center;color:#b70000;font-size:14px;}
+/*快速导航结束*/
+
+.footer{height:409px;width:100%;background:url(../images/bottom.png) repeat-x;margin-top:50px;}
+.footer .guild{background:url(../images/help3_43.png) repeat-x;height:225px;}
+.footer .guild .help{width:990px;margin:0 auto;height:201px;padding-top:24px;}
+.footer .guild .help .hl{width:730px;overflow:hidden;float:left;}
+.footer .guild .help .hl dl{width:80px;oveflow:hidden;float:left;margin-right:78px;}
+.footer .guild .help .hl dl dt{font:bold 14px/30px "宋体";border-bottom:1px dotted #656565;color:#646464;margin-bottom:8px;}
+.footer .guild .help .hl dl dd a{color:#646464;line-height:24px;padding-left:8px;background:url(../images/block_03.png) no-repeat 0 center;}
+.footer .guild .help .hr{width:257px;float:left;overflow:hidden;margin-top:12px;}
+.footer .guild .help .hr li{line-height:44px;float:left;}
+.footer .guild .help .hr li a{text-decoration:underline;color:#646464;margin-right:25px;}
+.footer .show{width:990px;margin:0 auto;}
+.footer .id{width:990px;margin:0 auto;overflow:hidden;background:url(../images/tel_49.png) no-repeat right center;margin-top:30px;}
+.footer .id ul{width:100%;line-height:30px;}
+.footer .id ul li{width:100%;height:30px;clear:both;color:#959595;}
+.footer .id ul li a{color:white;}
+.footer .id ul li a,.footer .id ul span{float:left;height:30px;}
+.footer .id ul li i{font:normal 12px/30px "微软雅黑";}
+.footer .id ul span{background:url(../images/footerline_07.png) no-repeat center center;width:20px;}
+/*底部结束*
