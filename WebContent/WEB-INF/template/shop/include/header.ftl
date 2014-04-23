@@ -6,7 +6,7 @@ $().ready(function() {
 	var $headerUsername = $("#headerUsername");
 	var $headerLogout = $("#headerLogout");
 	var $productSearchForm = $("#productSearchForm");
-	var $keyword = $("#productSearchForm .tex");
+	var $keyword = $("#productSearchForm > .keyword");
 	var defaultKeyword = "${message("shop.header.keyword")}";
 	
 	var username = getCookie("username");
@@ -35,6 +35,22 @@ $().ready(function() {
 			return false;
 		}
 	});
+	//DIY
+	$("#products").hover(
+		function(){$("#p_list").show();},
+		function(){$("#p_list").hide();}
+	);
+	
+	$("#products").hover(
+		function(){$("#p_list").css("display","block");},
+		function(){$("#p_list").css("display","none");}
+	);
+	
+	$("#p_list").hover(
+		function(){$(this).css("display","block");},
+		function(){$(this).css("display","none");}
+	);
+	
 
 });
 </script>
@@ -57,19 +73,24 @@ $().ready(function() {
             <div class="mgleft">
                 <a href="">收藏本站11</a> | <a href="">网站公告</a> | <a href="">正品保障</a>
             </div>
-            <!--msgleft end-->
+            <!--toptop start-->
            <div class="topNav clearfix">
 			<ul>
+				<!-- login -->
 				<li id="headerLogin" class="headerLogin">
 					<a href="${base}/login.jhtml">${message("shop.header.login")}</a>|
 				</li>
+				<!-- register -->
 				<li id="headerRegister" class="headerRegister">
 					<a href="${base}/register.jhtml">${message("shop.header.register")}</a>|
 				</li>
+				<!-- username -->
 				<li id="headerUsername" class="headerUsername"></li>
+				<!-- logout -->
 				<li id="headerLogout" class="headerLogout">
 					<a href="${base}/logout.jhtml">[${message("shop.header.logout")}]</a>|
 				</li>
+				<!--DIY  tag-->
 				[@navigation_list position = "top"]
 					[#list navigations as navigation]
 						<li>
@@ -80,7 +101,7 @@ $().ready(function() {
 				[/@navigation_list]
 			</ul>
 			</div>
-            <!--mgright end-->
+            <!--toptop end-->
         </div>
         <!--msg end-->
     	<div class="tp">
@@ -88,14 +109,16 @@ $().ready(function() {
             <!--logo end-->
             <div class="search">
     			<form id="productSearchForm" action="${base}/product/search.jhtml" method="get">
-					<input name="keyword" class="tex" value="${productKeyword!message("shop.header.keyword")}" maxlength="30" />
-					<input type="submit" value="" class="btn" />
+					<input name="keyword" class="keyword" value="${productKeyword!message("shop.header.keyword")}" maxlength="30" />
+					<input type="submit"  class="btn"value="" />
 				</form>
             </div>
             <!--search end-->
+            <!-- 购物车 cart -->
             <div class="shopping">
             	<a href="${base}/cart/list.jhtml">${message("shop.header.cart")}</a>
             </div>
+            <!-- 购物车 cart End-->
             <!--shopping end-->
         </div>
         
@@ -105,26 +128,44 @@ $().ready(function() {
 			[@navigation_list position = "middle"]
 				[#list navigations as navigation]
 				    <dd><a href="${navigation.url}"[#if navigation.isBlankTarget] target="_blank"[/#if]>${navigation.name}</a></dd>
-                	<dt></dt>
 				[/#list]
 			[/@navigation_list]
         	</dl>
         </div>
+		<!-- 热门搜索 -->
         <div class="recommend">
-        	<a><b>冬季推荐：</b></a><a href="">羽绒服</a><a> | </a><a href="">夹克</a><a> | </a><a href="">毛衣</a><a> | </a><a href="">风衣</a><a> | </a><a href="">卫衣</a><a> | </a><a href="">板鞋</a><a> | </a><a href="">跑步鞋</a><a> | </a><a href="">滑雪服</a> 
+        	[#if setting.hotSearches?has_content]
+        	<a>
+        		<b>${message("shop.header.hotSearch")}:</b>
+        	</a>
+        	[#list setting.hotSearches as hotSearch]
+						<a href="${base}/product/search.jhtml?keyword=${hotSearch?url}">${hotSearch}</a><a> | </a>
+			[/#list]
+			[/#if]
         </div>
+        <!-- 热门搜索  End-->
         <!--recommend-->
           <div class="classify">
     		<div class="product">
-        		<h1 id="products">全部商品分类</h1>
+    			[#-- 所有分类链接 --]
+        		<h1 id="products">
+        			<a href="${base}/product_category.jhtml">${message("shop.index.allProductCategory")}</a>
+        		</h1>
 	            <div class="p_list" id="p_list" style="display:none;">
 	            	<dl>
-	                	<dt><b>女鞋</b> ></dt>
-	                    <dd><a href="">新款女单</a>&nbsp;&nbsp;<a href="">休闲鞋</a>&nbsp;&nbsp;<a href="">女凉鞋</a>&nbsp;&nbsp;<a href="">凉拖</a></dd>
-	                </dl>
-	                <dl>
-	                	<dt><b>男鞋</b> ></dt>
-	                    <dd><a href="">新款女单</a>&nbsp;&nbsp;<a href="">休闲鞋</a>&nbsp;&nbsp;<a href="">女凉鞋</a>&nbsp;&nbsp;<a href="">凉拖</a></dd>
+	            		[@product_category_root_list count = 4]
+						[#list productCategories as rootProductCategory]
+						<!--<tr[#if !rootProductCategory_has_next] class="last"[/#if]>-->
+						<dt>
+							<b><a href="${base}${rootProductCategory.path}">${rootProductCategory.name}</a></b>
+						</dt>
+						<dd>
+							[#list rootProductCategory.children as productCategory]
+							<a href="${base}${productCategory.path}">${productCategory.name}</a>
+							[/#list]
+						</dd>
+						[/#list]
+						[/@product_category_root_list]
 	                </dl>
 	            </div>
             <!--p_list end-->

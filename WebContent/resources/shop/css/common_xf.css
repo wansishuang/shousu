@@ -59,13 +59,13 @@ body{background:url(../images/bodybg.png);}
 .top .header .msg a b{color:#f9cd00;}
 /*msg end*/
 
-.top .header .tp{overflow:hidden;width:100%;margin-top:30px;}
+.top .header .tp{overflow:hidden;width:100%;margin-top:30px;margin-bottom:2px;}
 .top .header .tp .logo{float:left;margin-right:60px;line-height:10px;color:#f9cd00;width:292px;}
 .top .header .tp .logo img,.top .header .tp .logo span{float:left;}
 .top .header .tp .logo span{margin-left:8px;font:bold 14px/36px "宋体";}
 .top .header .tp .search{width:400px;height:36px;background:url(../images/search_07.png) no-repeat;padding-left:11px;float:left;}
-.top .header .tp .tex{background:none;height:36px;width:327px;color:#969696;float:left;}
-.top .header .tp .btn{background:none;height:36px;width:73px;cursor:pointer;float:left;}
+.top .header .tp .keyword{background:none;height:36px;width:327px;color:#969696;float:left;}
+.top .header .tp .btn{background:none;height:36px;width:73px;cursor:pointer;float:right;}
 .top .header .tp .shopping{width:108px;height:36px;background:url(../images/shoppingcar_09.png) no-repeat;float:right;padding-left:52px;font:bold 12px/36px "宋体";color:white;cursor:pointer;+line-height:36px;}
 .top .header .tp .shopping span{color:#f9cd00;font-family:Arial, Helvetica, sans-serif;}
 /*tp end*/
@@ -93,6 +93,7 @@ body{background:url(../images/bodybg.png);}
 .quick dl dd.returntop a{background:url(../images/arrow_07.png) no-repeat 85px center;color:#b70000;font-size:14px;}
 /*快速导航结束*/
 
+/*
 .footer{height:409px;width:100%;background:url(../images/bottom.png) repeat-x;margin-top:50px;}
 .footer .guild{background:url(../images/help3_43.png) repeat-x;height:225px;}
 .footer .guild .help{width:990px;margin:0 auto;height:201px;padding-top:24px;}
@@ -111,4 +112,4 @@ body{background:url(../images/bodybg.png);}
 .footer .id ul li a,.footer .id ul span{float:left;height:30px;}
 .footer .id ul li i{font:normal 12px/30px "微软雅黑";}
 .footer .id ul span{background:url(../images/footerline_07.png) no-repeat center center;width:20px;}
-/*底部结束*
+/*底部结束*/
