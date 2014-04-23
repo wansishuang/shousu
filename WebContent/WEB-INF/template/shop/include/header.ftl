@@ -1,12 +1,11 @@
 <script type="text/javascript">
 $().ready(function() {
-	//初始化JS
 	var $headerLogin = $("#headerLogin");
 	var $headerRegister = $("#headerRegister");
 	var $headerUsername = $("#headerUsername");
 	var $headerLogout = $("#headerLogout");
 	var $productSearchForm = $("#productSearchForm");
-	var $keyword = $("#productSearchForm > .keyword");
+	var $keyword = $("#productSearchForm input");
 	var defaultKeyword = "${message("shop.header.keyword")}";
 	
 	var username = getCookie("username");
@@ -41,17 +40,10 @@ $().ready(function() {
 		function(){$("#p_list").hide();}
 	);
 	
-	$("#products").hover(
-		function(){$("#p_list").css("display","block");},
-		function(){$("#p_list").css("display","none");}
-	);
-	
 	$("#p_list").hover(
-		function(){$(this).css("display","block");},
-		function(){$(this).css("display","none");}
+		function(){$("#p_list").show();},
+		function(){$("#p_list").hide();}
 	);
-	
-
 });
 </script>
 <div class="quick">
@@ -110,7 +102,7 @@ $().ready(function() {
             <div class="search">
     			<form id="productSearchForm" action="${base}/product/search.jhtml" method="get">
 					<input name="keyword" class="keyword" value="${productKeyword!message("shop.header.keyword")}" maxlength="30" />
-					<input type="submit"  class="btn"value="" />
+					<input type="submit"  class="btn" value="" />
 				</form>
             </div>
             <!--search end-->
@@ -124,7 +116,7 @@ $().ready(function() {
         
         <!--tp end-->
         <div class="nav">
-        <dl>
+        	<dl>
 			[@navigation_list position = "middle"]
 				[#list navigations as navigation]
 				    <dd><a href="${navigation.url}"[#if navigation.isBlankTarget] target="_blank"[/#if]>${navigation.name}</a></dd>
@@ -145,7 +137,7 @@ $().ready(function() {
         </div>
         <!-- 热门搜索  End-->
         <!--recommend-->
-          <div class="classify">
+        <div class="classify">
     		<div class="product">
     			[#-- 所有分类链接 --]
         		<h1 id="products">
@@ -153,7 +145,7 @@ $().ready(function() {
         		</h1>
 	            <div class="p_list" id="p_list" style="display:none;">
 	            	<dl>
-	            		[@product_category_root_list count = 4]
+	            		[@product_category_root_list count = 6]
 						[#list productCategories as rootProductCategory]
 						<!--<tr[#if !rootProductCategory_has_next] class="last"[/#if]>-->
 						<dt>
@@ -161,13 +153,13 @@ $().ready(function() {
 						</dt>
 						<dd>
 							[#list rootProductCategory.children as productCategory]
-							<a href="${base}${productCategory.path}">${productCategory.name}</a>
+							<a href="${base}${productCategory.path}">${productCategory.name}</a>&nbsp;&nbsp;
 							[/#list]
 						</dd>
 						[/#list]
 						[/@product_category_root_list]
 	                </dl>
-	            </div>
+	           </div>
             <!--p_list end-->
         </div>
         <!--product end-->

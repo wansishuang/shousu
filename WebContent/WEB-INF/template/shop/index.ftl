@@ -35,13 +35,21 @@
 
 <script type="text/javascript">
 $().ready(function() {
-
+	//diy
+	$("#slider3").Xslider({
+		affect:'fade',
+		ctag: 'div'
+	});
+	
 	var $slider = $("#slider");
 	var $newArticleTab = $("#newArticle .tab");
 	var $promotionProductTab = $("#promotionProduct .tab");
 	var $promotionProductInfo = $("#promotionProduct .info");
 	var $hotProductTab = $("#hotProduct .tab");
 	var $newProductTab = $("#newProduct .tab");
+	//diy
+	var $hotProductImage = $("#hotProduct img");
+	var $newProductImage = $("#newProduct img");
 	
 	$slider.nivoSlider({
 		effect: "random",
@@ -93,6 +101,19 @@ $().ready(function() {
 	
 	promotionInfo();
 	setInterval(promotionInfo, 60 * 1000);
+	
+	//diy
+	$hotProductImage.lazyload({
+		threshold: 100,
+		effect: "fadeIn",
+		skip_invisible: false
+	});
+	
+	$newProductImage.lazyload({
+		threshold: 100,
+		effect: "fadeIn",
+		skip_invisible: false
+	});
 
 });
 </script>
