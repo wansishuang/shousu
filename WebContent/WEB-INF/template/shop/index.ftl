@@ -6,8 +6,8 @@
 [@seo type = "index"]
 	[#--双问号 “??” 报错不用管--]
 	<title>[#if seo.title??][@seo.title?interpret /][#else]${message("shop.index.title")}[/#if][#if systemShowPowered] - Powered By ShouSu[/#if]</title>
-	<meta name="author" content="SHOP++ Team" />
-	<meta name="copyright" content="SHOP++" />
+	<meta name="author" content="SHOUSU Team" />
+	<meta name="copyright" content="SHOUSU" />
 	[#if seo.keywords??]
 		<meta name="keywords" content="[@seo.keywords?interpret /]" />
 	[/#if]
@@ -26,15 +26,12 @@
 <script type="text/javascript" src="${base}/resources/shop/js/common.js"></script>
 
 <!--/*DIY*/-->
-<!--<script type="text/javascript" src="${base}/resources/shop/js/jquery.Xslider.js"></script>-->
-<script type="text/javascript" src="${base}/resources/shop/js/jquery.lazyload.js"></script>
 
 <script type="text/javascript">
 $().ready(function() {
 	
 	/* 滑动效果 */
 	var $slider = $("#slider");
-	
 	$slider.nivoSlider({
 		effect: "random",
 		animSpeed: 1000,
@@ -45,35 +42,39 @@ $().ready(function() {
 	});
 	
 	
-	/* 新文章效果 */
+	/* 新文章效果 
 	var $newArticleTab = $("#newArticle .tab");
 	$newArticleTab.tabs("#newArticle .tabContent", {
 		tabs: "li",
 		event: "mouseover",
 		initialIndex: 1
 	});
+	*/
 	
-	/* 商城促销活动 */
+	/* 商城促销活动
 	var $promotionProductTab = $("#promotionProduct .tab");
 	$promotionProductTab.tabs("#promotionProduct .tabContent", {
 		tabs: "li",
 		event: "mouseover"
 	});
+	 */
 	
 	
-	/* 销量热的产品 */
+	/* 销量热的产品 
 	var $hotProductTab = $("#hotProduct .tab");
 	$hotProductTab.tabs("#hotProduct .tabContent", {
 		tabs: "li",
 		event: "mouseover"
 	});
+	*/
 	
-	/* 新产品标签  */
+	/* 新产品标签  
 	var $newProductTab = $("#newProduct .tab");
 	$newProductTab.tabs("#newProduct .tabContent", {
 		tabs: "li",
 		event: "mouseover"
 	});
+	*/
 	
 	/* 商城促销活动信息 */
 	var $promotionProductInfo = $("#promotionProduct .info");
@@ -97,19 +98,6 @@ $().ready(function() {
 	
 	promotionInfo();
 	setInterval(promotionInfo, 60 * 1000);
-	
-	//diy
-	$hotProductImage.lazyload({
-		threshold: 100,
-		effect: "fadeIn",
-		skip_invisible: false
-	});
-	
-	$newProductImage.lazyload({
-		threshold: 100,
-		effect: "fadeIn",
-		skip_invisible: false
-	});
 
 });
 </script>
@@ -121,7 +109,6 @@ $().ready(function() {
 	<div class="container index">
 		[#-- 轮播广告 --]
 		<!-- 轮播广告 -->
-		<!-- span25 width:990px -->
 		<div class="span24">
 			[@ad_position id = 3 /]
 		</div>
@@ -164,8 +151,6 @@ $().ready(function() {
 		[#-- 品牌，产品 start --]
 		<div class="span18">
 			[#-- 热门品牌 --]<!--热门品牌 -->
-			
-			<!--
 			<div class="hotBrand clearfix">
 				<div class="title">
 					[#-- 所有品牌链接 --]
@@ -184,10 +169,11 @@ $().ready(function() {
 					[/@brand_list]
 				</ul>
 			</div>
-			-->
+			
 			
 			
 			[#-- 热门品牌  end--]
+			<!--
 			[#-- 热门产品分类 start --]
 			<div class="hotProductCategory">
 				<div class="title">
@@ -215,6 +201,7 @@ $().ready(function() {
 				</div>
 			</div>
 			[#-- 热门产品分类 end --]
+			-->
 		</div>
 		[#-- 品牌，产品 end --]
 		<!--促销商品列表 start-->

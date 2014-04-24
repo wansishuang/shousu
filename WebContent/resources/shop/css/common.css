@@ -714,7 +714,6 @@ div.path li.last {
 
 div.header .logo {
 	height: 50px;
-	padding-top: 10px;
 	overflow: hidden;
 }
 
@@ -735,7 +734,11 @@ div.header .topNav li a {
 	margin: 0px 6px;
 }
 
-div.header .headerLogin, div.header .headerRegister, div.header .headerUsername, div.header .headerLogout {
+/* 登陆，注册，用户名，退出，默认为不显示 */
+div.header .headerLogin, 
+div.header .headerRegister, 
+div.header .headerUsername, 
+div.header .headerLogout {
 	display: none;
 }
 
@@ -838,15 +841,15 @@ div.header .hotSearch {
 	overflow: hidden;
 }
 
+/* 搜素框 */
 div.header .search {
-	width: 228px;
-	height: 23px;
+	width:400px;
+	height:36px;
+	background:url(../images/search_07.png) no-repeat;
+	padding-left:11px;
+	float:left;
 	line-height: 23px;
-	float: right;
 	position: relative;
-	padding: 2px 0px;
-	margin: 5px 5px 5px 10px;
-	background: url(../images/common.gif) 0px -300px no-repeat;
 }
 
 div.header .search .keyword {
@@ -999,9 +1002,30 @@ div.pagination .pageBreak {
 	cursor: default;
 }
 
-/* DIY */
-
 /* DIY Start */
+
+/*全部商品分类结束*/
+
+/*公共*/
+.top{width:100%;background:url(../images/topbg.png) repeat-x;height:196px;color:white;}
+.top .header{width:990px;margin:0 auto;color:white;position:relative;z-index:500;}
+.top .header .msg{width:100%;height:30px;line-height:30px;color:white;}
+.top .header .msg .mgleft{widht:30%;float:left;color:white;}
+.top .header .msg .mgright{widht:422px;float:right;}
+.top .header .msg .mgright li{float:left;}
+.top .header .msg a{color:white;}
+.top .header .msg a b{color:#f9cd00;}
+
+/* tp start*/
+.top .header .tp{overflow:hidden;width:100%;margin-top:30px;margin-bottom:2px;}
+.top .header .tp .logo{float:left;margin-right:30px;line-height:10px;color:#f9cd00;width:250px;}
+.top .header .tp .logo img,.top .header .tp .logo span{float:left;}
+.top .header .tp .keyword{background:none;height:36px;width:327px;color:#969696;float:left;}
+.top .header .tp .btn{background:none;height:36px;width:73px;cursor:pointer;float:right;outline:none;border:none;}
+.top .header .tp .shopping{width:108px;height:36px;background:url(../images/shoppingcar_09.png) no-repeat;float:right;padding-left:52px;font:bold 12px/36px "宋体";color:white;cursor:pointer;+line-height:36px;}
+.top .header .tp .shopping span{color:#f9cd00;font-family:Arial, Helvetica, sans-serif;}
+/*tp end*/
+
 .top .header .nav{width:756px;height:38px;float:right;}
 .top .header .classify{width:236px;height:457px;position:absolute;top:121px;left:0px;z-index:999;}
 .top .header .classify h1{width:216px;height:39px;padding-left:20px;color:#653114;font:bold 14px/39px "宋体";background:url(../images/fl_15.png) no-repeat;}
@@ -1010,32 +1034,11 @@ div.pagination .pageBreak {
 .top .header .classify dl dt{padding-top:5px;}
 .top .header .classify dl dt b{color:#333333;}
 .top .header .classify dl a{color:#636363;}
-/*全部商品分类结束*/
-
-/*公共*/
-html{overflow-x:hidden;}
-body{background:url(../images/bodybg.png);}
-.top{width:100%;width:100%;background:url(../images/topbg.png) repeat-x;height:196px;color:white;}
-.top .header{width:990px;margin:0 auto;color:white;position:relative;z-index:500;}
-.top .header .msg{width:100%;height:30px;line-height:30px;color:white;}
-.top .header .msg .mgleft{widht:30%;float:left;color:white;}
-.top .header .msg .mgright{widht:422px;float:right;}
-.top .header .msg a{color:white;}
-.top .header .msg a b{color:#f9cd00;}
 /*msg end*/
 
-.top .header .tp{overflow:hidden;width:100%;margin-top:30px;margin-bottom:2px;}
-.top .header .tp .logo{float:left;margin-right:60px;line-height:10px;color:#f9cd00;width:292px;}
-.top .header .tp .logo img,.top .header .tp .logo span{float:left;}
-.top .header .tp .logo span{margin-left:8px;font:bold 14px/36px "宋体";}
-.top .header .tp .search{width:400px;height:36px;background:url(../images/search_07.png) no-repeat;padding-left:11px;float:left;}
-.top .header .tp .keyword{background:none;height:36px;width:327px;color:#969696;float:left;}
-.top .header .tp .btn{background:none;height:36px;width:73px;cursor:pointer;float:right;}
-.top .header .tp .shopping{width:108px;height:36px;background:url(../images/shoppingcar_09.png) no-repeat;float:right;padding-left:52px;font:bold 12px/36px "宋体";color:white;cursor:pointer;+line-height:36px;}
-.top .header .tp .shopping span{color:#f9cd00;font-family:Arial, Helvetica, sans-serif;}
-/*tp end*/
 
-.top .header .nav{width:756px;height:38px;float:right;}
+
+.top .header .nav{width:756px;height:38px;float:right;margin-top:10px;}
 .top .header .nav dl dd{width:90px;height:38px;float:left;}
 .top .header .nav dl dd a{font:bold 14px/38px "宋体";color:white;display:block;text-align:center;}
 .top .header .nav dl dd a:hover{background:url(../images/lihover_03.png) no-repeat;text-decoration:underline;}
@@ -1058,23 +1061,10 @@ body{background:url(../images/bodybg.png);}
 .quick dl dd.returntop a{background:url(../images/arrow_07.png) no-repeat 85px center;color:#b70000;font-size:14px;}
 /*快速导航结束*/
 
-/*
-.footer{height:409px;width:100%;background:url(../images/bottom.png) repeat-x;margin-top:50px;}
-.footer .guild{background:url(../images/help3_43.png) repeat-x;height:225px;}
-.footer .guild .help{width:990px;margin:0 auto;height:201px;padding-top:24px;}
-.footer .guild .help .hl{width:730px;overflow:hidden;float:left;}
-.footer .guild .help .hl dl{width:80px;oveflow:hidden;float:left;margin-right:78px;}
-.footer .guild .help .hl dl dt{font:bold 14px/30px "宋体";border-bottom:1px dotted #656565;color:#646464;margin-bottom:8px;}
-.footer .guild .help .hl dl dd a{color:#646464;line-height:24px;padding-left:8px;background:url(../images/block_03.png) no-repeat 0 center;}
-.footer .guild .help .hr{width:257px;float:left;overflow:hidden;margin-top:12px;}
-.footer .guild .help .hr li{line-height:44px;float:left;}
-.footer .guild .help .hr li a{text-decoration:underline;color:#646464;margin-right:25px;}
-.footer .show{width:990px;margin:0 auto;}
-.footer .id{width:990px;margin:0 auto;overflow:hidden;background:url(../images/tel_49.png) no-repeat right center;margin-top:30px;}
-.footer .id ul{width:100%;line-height:30px;}
-.footer .id ul li{width:100%;height:30px;clear:both;color:#959595;}
-.footer .id ul li a{color:white;}
-.footer .id ul li a,.footer .id ul span{float:left;height:30px;}
-.footer .id ul li i{font:normal 12px/30px "微软雅黑";}
-.footer .id ul span{background:url(../images/footerline_07.png) no-repeat center center;width:20px;}
-/*底部结束*/
+
+/*火狐*/
+@-moz-document url-prefix(){.main .part1 div.cx{top:-6px;}}
+@-moz-document url-prefix(){.main .part1 div.rx{top:-7px;}}
+/*火狐*/
+
+

@@ -1,12 +1,15 @@
-<script type="text/javascript" src="${base}/resources/shop/js/jquery.js"></script>
 <script type="text/javascript">
 $().ready(function() {
+
+
 	var $headerLogin = $("#headerLogin");
 	var $headerRegister = $("#headerRegister");
 	var $headerUsername = $("#headerUsername");
 	var $headerLogout = $("#headerLogout");
 	var $productSearchForm = $("#productSearchForm");
-	var $keyword = $("#productSearchForm input");
+	var $keyword = $("input :first");
+	
+	var $keyword = $("#productSearchForm .keyword");
 	var defaultKeyword = "${message("shop.header.keyword")}";
 	
 	var username = getCookie("username");
@@ -35,15 +38,15 @@ $().ready(function() {
 			return false;
 		}
 	});
-	//DIY
+	/*DIY*/
 	$("#products").hover(
-		function(){$("#p_list").show();},
-		function(){$("#p_list").hide();}
+		function(){$("#p_list").css("display","block");},
+		function(){$("#p_list").css("display","none");}
 	);
 	
 	$("#p_list").hover(
-		function(){$("#p_list").show();},
-		function(){$("#p_list").hide();}
+		function(){$("#p_list").css("display","block");},
+		function(){$("#p_list").css("display","none");}
 	);
 });
 </script>
@@ -64,30 +67,30 @@ $().ready(function() {
 	<div class="header">
         <div class="msg">
             <div class="mgleft">
-                <a href="">收藏本站11</a> | <a href="">网站公告</a> | <a href="">正品保障</a>
+                <a href="">收藏本站</a> | <a href="">网站公告</a> | <a href="">正品保障</a>
             </div>
             <!--toptop start-->
-           <div class="topNav clearfix">
+           <div class="mgright">
 			<ul>
 				<!-- login -->
 				<li id="headerLogin" class="headerLogin">
-					<a href="${base}/login.jhtml">${message("shop.header.login")}</a>|
+					<a href="${base}/login.jhtml">&nbsp;${message("shop.header.login")}&nbsp;</a>|
 				</li>
 				<!-- register -->
 				<li id="headerRegister" class="headerRegister">
-					<a href="${base}/register.jhtml">${message("shop.header.register")}</a>|
+					<a href="${base}/register.jhtml">&nbsp;${message("shop.header.register")}&nbsp;</a>|
 				</li>
 				<!-- username -->
 				<li id="headerUsername" class="headerUsername"></li>
 				<!-- logout -->
 				<li id="headerLogout" class="headerLogout">
-					<a href="${base}/logout.jhtml">[${message("shop.header.logout")}]</a>|
+					<a href="${base}/logout.jhtml">&nbsp;[${message("shop.header.logout")}]&nbsp;</a>|
 				</li>
 				<!--DIY  tag-->
 				[@navigation_list position = "top"]
 					[#list navigations as navigation]
 						<li>
-							<a href="${navigation.url}"[#if navigation.isBlankTarget][/#if]>${navigation.name}</a>
+							<a href="${navigation.url}"[#if navigation.isBlankTarget][/#if]>&nbsp${navigation.name}</a>
 							[#if navigation_has_next]|[/#if]
 						</li>
 					[/#list]
@@ -98,12 +101,12 @@ $().ready(function() {
         </div>
         <!--msg end-->
     	<div class="tp">
-        	<div class="logo"><img src="${base}/resources/shop/images/logo_05.png" /><span>全场满99元免运费</span></div>
+        	<div class="logo"><img src="${base}/resources/shop/images/logo_05.png" /></div>
             <!--logo end-->
             <div class="search">
     			<form id="productSearchForm" action="${base}/product/search.jhtml" method="get">
-    			
 					<input name="keyword" class="keyword" value="${productKeyword!message("shop.header.keyword")}" maxlength="30" />
+					<input type="submit" class="btn" value="" style="none" />
 					
 				</form>
             </div>
@@ -171,105 +174,3 @@ $().ready(function() {
     <!--header end-->
 </div>
 
-<!--
-[#-- Header 头部 --]
-<div class="container header">
-	[#-- Logo图片 --]
-	<div class="span5">
-		<div class="logo">
-			<a href="${base}/">
-				<img src="${setting.logo}" alt="${setting.siteName}" />
-			</a>
-		</div>
-	</div>
-	[#-- header 头部广告位 --]
-	<div class="span9">
-		[@ad_position id = 1 /]
-	</div>
-	[#-- header 顶部导航 --]
-	<div class="span10 last">
-		<div class="topNav clearfix">
-			<ul>
-				[#-- login --]
-				<li id="headerLogin" class="headerLogin">
-					<a href="${base}/login.jhtml">${message("shop.header.login")}</a>|
-				</li>
-				[#-- register --]
-				<li id="headerRegister" class="headerRegister">
-					<a href="${base}/register.jhtml">${message("shop.header.register")}</a>|
-				</li>
-				[#-- User Name --]
-				<li id="headerUsername" class="headerUsername"></li>
-				[#-- logout 注销 --]
-				<li id="headerLogout" class="headerLogout">
-					<a href="${base}/logout.jhtml">[${message("shop.header.logout")}]</a>|
-				</li>
-				[#-- 动态添加导航 --]
-				[@navigation_list position = "top"]
-					[#list navigations as navigation]
-						<li>
-							<a href="${navigation.url}"[#if navigation.isBlankTarget] target="_blank"[/#if]>${navigation.name}</a>
-							[#if navigation_has_next]|[/#if]
-						</li>
-					[/#list]
-				[/@navigation_list]
-			</ul>
-		</div>
-		[#-- 购物车 --]
-		<div class="cart">
-			<a href="${base}/cart/list.jhtml">${message("shop.header.cart")}</a>
-		</div>
-		[#-- 商城电话 --]
-		[#if setting.phone??]
-			<div class="phone">
-				${message("shop.header.phone")}:
-				<strong>${setting.phone}</strong>
-			</div>
-		[/#if]
-	</div>
-	[#-- header 中部导航  --]
-	<div class="span24">
-		<ul class="mainNav">
-			[@navigation_list position = "middle"]
-				[#list navigations as navigation]
-					<li[#if navigation.url = url] class="current"[/#if]>
-						<a href="${navigation.url}"[#if navigation.isBlankTarget] target="_blank"[/#if]>${navigation.name}</a>
-						[#if navigation_has_next]|[/#if]
-					</li>
-				[/#list]
-			[/@navigation_list]
-		</ul>
-	</div>
-	[#-- header 底部导航 --]
-	<div class="span24">
-		[#-- 商品标签  --]
-		<div class="tagWrap">
-			<ul class="tag">
-				[@tag_list type="product" count = 3]
-					[#list tags as tag]
-						<li[#if tag.icon??] class="icon" style="background: url(${tag.icon}) right no-repeat;"[/#if]>
-							<a href="${base}/product/list.jhtml?tagIds=${tag.id}">${tag.name}</a>
-						</li>
-					[/#list]
-				[/@tag_list]
-			</ul>
-			[#-- 热门搜素 --]
-			<div class="hotSearch">
-				[#if setting.hotSearches?has_content]
-					${message("shop.header.hotSearch")}:
-					[#list setting.hotSearches as hotSearch]
-						<a href="${base}/product/search.jhtml?keyword=${hotSearch?url}">${hotSearch}</a>
-					[/#list]
-				[/#if]
-			</div>
-			[#-- 商品搜索 --]
-			<div class="search">
-				<form id="productSearchForm" action="${base}/product/search.jhtml" method="get">
-					<input name="keyword" class="keyword" value="${productKeyword!message("shop.header.keyword")}" maxlength="30" />
-					<button type="submit">${message("shop.header.search")}</button>
-				</form>
-			</div>
-		</div>
-	</div>
-</div>
--->
