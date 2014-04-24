@@ -581,23 +581,29 @@ div.productList .table {
 	border: solid 1px #dddddd;
 }
 
+/* 原 width:176px;
+padding-bottom: 4px，无；
+margin-top: 5px，无； */
 div.productList .table li {
-	width: 176px;
+	width: 185px;
 	height: 246px;
 	line-height: 20px;
 	float: left;
 	overflow: hidden;
 	border-bottom: solid 1px #e4e4e4;
+	padding-bottom: 4px;
+	margin-top: 5px;
 }
 
 div.productList .table li.last {
 	border-bottom: none;
 }
 
+/* 原padding：3px； */
 div.productList .table li a {
 	height: 240px;
 	display: block;
-	padding: 3px;
+	padding: 7px;
 }
 
 div.productList .table li a:hover {

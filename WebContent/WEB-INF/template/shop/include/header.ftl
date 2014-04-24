@@ -63,7 +63,7 @@ $().ready(function() {
     </dl>
 </div>
 
-<div id="tp" class="top">
+<div id="tp" class="tp">
 	<div class="header">
         <div class="msg">
             <div class="mgleft">
@@ -100,7 +100,7 @@ $().ready(function() {
             <!--toptop end-->
         </div>
         <!--msg end-->
-    	<div class="tp">
+    	<div class="tp1">
         	<div class="logo"><img src="${base}/resources/shop/images/logo_05.png" /></div>
             <!--logo end-->
             <div class="search">

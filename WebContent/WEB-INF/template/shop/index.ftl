@@ -42,42 +42,22 @@ $().ready(function() {
 	});
 	
 	
-	/* 新文章效果 
-	var $newArticleTab = $("#newArticle .tab");
-	$newArticleTab.tabs("#newArticle .tabContent", {
-		tabs: "li",
-		event: "mouseover",
-		initialIndex: 1
-	});
-	*/
-	
-	/* 商城促销活动
-	var $promotionProductTab = $("#promotionProduct .tab");
-	$promotionProductTab.tabs("#promotionProduct .tabContent", {
-		tabs: "li",
-		event: "mouseover"
-	});
-	 */
-	
-	
-	/* 销量热的产品 
+	/* 销量热的产品 */
 	var $hotProductTab = $("#hotProduct .tab");
 	$hotProductTab.tabs("#hotProduct .tabContent", {
 		tabs: "li",
 		event: "mouseover"
 	});
-	*/
 	
-	/* 新产品标签  
+	
+	/* 新产品标签  */
 	var $newProductTab = $("#newProduct .tab");
 	$newProductTab.tabs("#newProduct .tabContent", {
 		tabs: "li",
 		event: "mouseover"
 	});
-	*/
 	
-	/* 商城促销活动信息 */
-	var $promotionProductInfo = $("#promotionProduct .info");
+	/* 神马意思 
 	function promotionInfo() {
 		$promotionProductInfo.each(function() {
 			var $this = $(this);
@@ -98,7 +78,7 @@ $().ready(function() {
 	
 	promotionInfo();
 	setInterval(promotionInfo, 60 * 1000);
-
+	*/
 });
 </script>
 </head>
@@ -112,44 +92,8 @@ $().ready(function() {
 		<div class="span24">
 			[@ad_position id = 3 /]
 		</div>
-		
-		[#-- 新文章模块，，广告右边div --]
-		<!-- 新文章模块，，广告右边div -->
-		<!--
-		<div class="span6 last">
-			<div id="newArticle" class="newArticle">
-				[@article_category_root_list count = 3]
-					[#-- 文章标签 --]
-					<ul class="tab">
-						[#list articleCategories as articleCategory]
-							<li>
-								<a href="${base}${articleCategory.path}" target="_blank">${articleCategory.name}</a>
-							</li>
-						[/#list]
-					</ul>
-					[#-- 文章内容 --]
-					[#list articleCategories as articleCategory]
-						[@article_list articleCategoryId = articleCategory.id count = 5]
-							<ul class="tabContent">
-								[#list articles as article]
-									<li>
-										<a href="${base}${article.path}" title="${article.title}" target="_blank">${abbreviate(article.title, 30)}</a>
-									</li>
-								[/#list]
-							</ul>
-						[/@article_list]
-					[/#list]
-				[/@article_category_root_list]
-			</div>
-			[#--文章底部广告，春季新品 --]
-			[@ad_position id = 4 /]
-			</div>
-		-->
-		
-			
-		
 		[#-- 品牌，产品 start --]
-		<div class="span18">
+		<div class="span24">
 			[#-- 热门品牌 --]<!--热门品牌 -->
 			<div class="hotBrand clearfix">
 				<div class="title">
@@ -169,114 +113,9 @@ $().ready(function() {
 					[/@brand_list]
 				</ul>
 			</div>
-			
-			
-			
 			[#-- 热门品牌  end--]
-			<!--
-			[#-- 热门产品分类 start --]
-			<div class="hotProductCategory">
-				<div class="title">
-					[#-- 所有分类链接 --]
-					<a href="${base}/product_category.jhtml">${message("shop.index.allProductCategory")}</a>
-					<strong>${message("shop.index.hotProductCategory")}</strong>CATEGORY
-				</div>
-				<div class="content">
-					[@product_category_root_list count = 4]
-						<table>
-							[#list productCategories as rootProductCategory]
-								<tr[#if !rootProductCategory_has_next] class="last"[/#if]>
-									<th>
-										<a href="${base}${rootProductCategory.path}">${rootProductCategory.name}</a>
-									</th>
-									<td>
-										[#list rootProductCategory.children as productCategory]
-											<a href="${base}${productCategory.path}">${productCategory.name}</a>
-										[/#list]
-									</td>
-								</tr>
-							[/#list]
-						</table>
-					[/@product_category_root_list]
-				</div>
-			</div>
-			[#-- 热门产品分类 end --]
-			-->
 		</div>
-		[#-- 品牌，产品 end --]
-		<!--促销商品列表 start-->
-		<div class="span6 last">
-			<div id="promotionProduct" class="promotionProduct">
-				<ul class="tab">
-					[@promotion_list hasEnded = false count = 2]
-						[#list promotions as promotion]
-							<li>
-								<a href="${base}/product/list.jhtml?promotionId=${promotion.id}" target="_blank">${promotion.name}</a>
-							</li>
-						[/#list]
-					[/@promotion_list]
-				</ul>
-				[@promotion_list hasEnded = false count = 2]
-					[#list promotions as promotion]
-						<ul class="tabContent">
-							[@product_list promotionId = promotion.id count = 2]
-								[#list products as product]
-									<li[#if !product_has_next] class="last"[/#if]>
-										<span class="info"[#if promotion.beginDate??] beginTimeStamp="${promotion.beginDate?long}"[/#if][#if promotion.endDate??] endTimeStamp="${promotion.endDate?long}"[/#if]>
-											[#if promotion.beginDate??]
-												${message("shop.index.begin")}: <strong>${promotion.beginDate?string("yyyy-MM-dd HH:mm")}</strong>
-											[/#if]
-										</span>
-										<div class="product">
-											<img src="[#if product.image??]${product.image}[#else]${setting.defaultThumbnailProductImage}[/#if]" alt="${product.name}" />
-											<a href="${base}${product.path}" title="${product.name}" target="_blank">${abbreviate(product.name, 24)}</a>
-											<div>
-												[#if setting.isShowMarketPrice]
-													${message("Product.marketPrice")}:
-													<del>${currency(product.marketPrice, true)}</del>
-												[#else]
-													${message("Product.price")}:
-													<strong>${currency(product.price, true)}</strong>
-												[/#if]
-											</div>
-										</div>
-										[#if setting.isShowMarketPrice]
-											<div>
-												${message("Product.price")}:
-												<strong>${currency(product.price, true)}</strong>
-											</div>
-										[/#if]
-									</li>
-								[/#list]
-							[/@product_list]
-						</ul>
-					[/#list]
-				[/@promotion_list]
-			</div>
-			<div class="newReview">
-				<div class="title">${message("shop.index.newReview")}</div>
-				<ul>
-					[@review_list count = 4]
-						[#list reviews as review]
-							<li>
-								<a href="${base}${review.path}" title="${abbreviate(review.content, 100, "...")}" target="_blank">${abbreviate(review.content, 30)}</a>
-							</li>
-						[/#list]
-					[/@review_list]
-				</ul>
-			</div>
-		</div>
-		<!--促销商品列表 end-->
-		<!-- 中部 广告 start-->
-		<!-- 
-		<div class="span24">
-			[@ad_position id = 5 /]
-		</div>
-		-->
-		
-		<!-- 中部 广告 end-->
-		<!-- 热门商品 start-->
-		<!-- 
+		<!--热门商品-->
 		<div class="span24">
 			<div id="hotProduct" class="hotProduct clearfix">
 				[@product_category_root_list count = 3]
@@ -308,17 +147,18 @@ $().ready(function() {
 				[/@product_category_root_list]
 			</div>
 		</div>
-		-->
-		
 		<!-- 热门商品 end-->
 		<!-- 最新商品 start-->
 		<div class="span24">
 			<div id="newProduct" class="newProduct clearfix">
-				[@product_category_root_list count = 3]
+				[@product_category_root_list count = 5][#--加载的产品组数--]
+					<!-- 标题 -->
 					<div class="title">
 						<strong>${message("shop.index.newProduct")}</strong>
 						<a href="${base}/product/list.jhtml?tagIds=2" target="_blank"></a>
 					</div>
+					<!-- 标题 End-->
+					<!-- 标签 -->
 					<ul class="tab">
 						[#list productCategories as productCategory]
 							<li>
@@ -326,9 +166,14 @@ $().ready(function() {
 							</li>
 						[/#list]
 					</ul>
+					<!-- 标签 End-->
+					<!-- 标签图片 -->
 					<div class="newProductAd">
 						[@ad_position id = 7 /]
 					</div>
+					<!-- 标签图片 End-->
+					
+					<!-- 展示图片 -->
 					[#list productCategories as productCategory]
 						<ul class="tabContent">
 							[@product_list productCategoryId = productCategory.id tagIds = 2 count = 8]
@@ -341,6 +186,7 @@ $().ready(function() {
 						</ul>
 					[/#list]
 				[/@product_category_root_list]
+				<!-- 展示图片 End-->
 			</div>
 		</div>
 		<!-- 最新商品 end-->

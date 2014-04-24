@@ -11,6 +11,12 @@
 
 /* ---------- Index ---------- */
 
+
+/*DIY */
+div.span24{
+	margin-top:5px;
+}
+
 /* slider img  */
 div.index .slider {
 	height: 310px;
@@ -64,9 +70,10 @@ div.index .newArticle .tabContent li {
 	line-height: 26px;
 }
 
+/* 原background-color: #f1f1f1; */
 div.index .hotBrand {
 	padding: 0px 10px 10px 10px;
-	background-color: #f1f1f1;
+	background-color: #FFF0F0;
 }
 
 div.index .hotBrand .title {
@@ -335,8 +342,9 @@ div.index .hotProduct .title a {
 	float: right;
 }
 
+/* 原width: 690px; */
 div.index .hotProduct .tab {
-	width: 690px;
+	width: 730px;
 	height: 40px;
 	line-height: 40px;
 	float: left;
@@ -369,8 +377,9 @@ div.index .hotProduct .hotProductAd {
 	float: left;
 }
 
+/* 原width: 685px;*/
 div.index .hotProduct .tabContent {
-	width: 685px;
+	width: 724px;
 	float: left;
 	padding-left: 5px;
 	_padding-left: 2px;
