@@ -118,11 +118,14 @@ $().ready(function() {
 		<!--热门商品-->
 		<div class="span24">
 			<div id="hotProduct" class="hotProduct clearfix">
-				[@product_category_root_list count = 3]
+				[@product_category_root_list count = 3]<!--count应该为加载多少分类 -->
+					<!-- 标题 -->
 					<div class="title">
 						<strong>${message("shop.index.hotProduct")}</strong>
 						<a href="${base}/product/list.jhtml?tagIds=1" target="_blank"></a>
 					</div>
+					<!-- 标题 End-->
+					<!-- 标签 -->
 					<ul class="tab">
 						[#list productCategories as productCategory]
 							<li>
@@ -130,12 +133,17 @@ $().ready(function() {
 							</li>
 						[/#list]
 					</ul>
+					<!-- 标签 End-->
+					<!-- 标签图片 
 					<div class="hotProductAd">
 						[@ad_position id = 6 /]
 					</div>
+					<!-- 标签图片 End-->
+					
+					<!-- 展示图片 -->
 					[#list productCategories as productCategory]
 						<ul class="tabContent">
-							[@product_list productCategoryId = productCategory.id tagIds = 1 count = 8]
+							[@product_list productCategoryId = productCategory.id tagIds = 1 count = 10][#--加载的产品数--]
 								[#list products as product]
 									<li>
 										<a href="${base}${product.path}" title="${product.name}" target="_blank"><img src="[#if product.image??]${product.image}[#else]${setting.defaultThumbnailProductImage}[/#if]" alt="${product.name}" /></a>
@@ -144,6 +152,7 @@ $().ready(function() {
 							[/@product_list]
 						</ul>
 					[/#list]
+					<!-- 展示图片 End-->
 				[/@product_category_root_list]
 			</div>
 		</div>
@@ -167,7 +176,7 @@ $().ready(function() {
 						[/#list]
 					</ul>
 					<!-- 标签 End-->
-					<!-- 标签图片 -->
+					<!-- 标签图片 
 					<div class="newProductAd">
 						[@ad_position id = 7 /]
 					</div>
@@ -176,7 +185,7 @@ $().ready(function() {
 					<!-- 展示图片 -->
 					[#list productCategories as productCategory]
 						<ul class="tabContent">
-							[@product_list productCategoryId = productCategory.id tagIds = 2 count = 8]
+							[@product_list productCategoryId = productCategory.id tagIds = 2 count = 10][#--加载的产品数--]
 								[#list products as product]
 									<li>
 										<a href="${base}${product.path}" title="${product.name}" target="_blank"><img src="[#if product.image??]${product.image}[#else]${setting.defaultThumbnailProductImage}[/#if]" alt="${product.name}" /></a>

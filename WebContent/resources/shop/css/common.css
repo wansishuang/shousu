@@ -26,13 +26,13 @@ html {
 	_filter: expression(document.execCommand("BackgroundImageCache", false, true));
 }
 
+/*background-color: #ffffff; */
 body {
 	_width: 100%;
 	_height: 100%;
 	font: 12px tahoma, Arial, Verdana, sans-serif;
 	color: #666666;
-	background-color: #ffffff;
-	_background-image: url(about: blank);
+	_background: url('about:blank') repeat scroll left 0px ;
 	_background-attachment: fixed;
 }
 
@@ -223,8 +223,9 @@ div.container .span11 {
 	width: 430px;
 }
 
+/* 470 */
 div.container .span12 {
-	width: 470px;
+	width: 490px;
 }
 
 div.container .span13 {
