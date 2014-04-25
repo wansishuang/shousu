@@ -435,7 +435,7 @@ div.index .newProduct .title a {
 }
 
 div.index .newProduct .tab {
-	width: 690px;
+	width: 730px;
 	height: 40px;
 	line-height: 40px;
 	float: left;
@@ -496,7 +496,6 @@ div.index .newProduct .tabContent img {
 div.index .friendLink {
 	height: 30px;
 	line-height: 30px;
-	padding-left: 30px;
 	margin-bottom: 10px;
 	color: #ffffff;
 	background-color: #c5c5c5;

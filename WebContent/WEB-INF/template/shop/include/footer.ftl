@@ -1,9 +1,13 @@
+
 [#-- 网页内容底部 --]
 <div class="container footer">
+	<!-- 底部导航 End-->
 	[#-- 底部广告 --]
-	<div class="span24">
+	<!--
+		<div class="span24">
 		[@ad_position id = 2 /]
 	</div>
+	-->
 	[#-- 底部友好链接 --]
 	<div class="span24">
 		<ul class="bottomNav">

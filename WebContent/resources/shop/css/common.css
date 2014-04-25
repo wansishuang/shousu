@@ -885,10 +885,13 @@ div.header .search button {
 }
 
 /* ---------- Footer ---------- */
+/* DIY */
 
+/* border-top: 1px solid #888; */
 div.footer .bottomNav {
 	margin-bottom: 10px;
 	text-align: center;
+	border-top: 1px solid #888;
 }
 
 div.footer .bottomNav li {
@@ -1075,4 +1078,31 @@ div.pagination .pageBreak {
 /*火狐*/
 
 /**/
+/*footer 
+div.fores {
+	width:990px;
+	height: 160px;
+	padding: 10px 20px;
+	border-top: 1px solid #DDD;
+	border-bottom: 1px solid #F1F1F1;
+	
+}
+
+div.fores dl{
+	width: 192px;
+	float: left;
+}
+div.fores dt{
+	position: relative;
+	padding: 6px 0px 6px 44px;
+	font: 14px "microsoft yahei";
+}
+div.fores dd{
+	min-height: 120px;
+	padding-left: 24px;
+	margin-left: 20px;
+	line-height: 20px;
+	
+}
+/* DIY END */
 

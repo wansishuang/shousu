@@ -134,7 +134,7 @@ $().ready(function() {
 						[/#list]
 					</ul>
 					<!-- 标签 End-->
-					<!-- 标签图片 
+					<!-- 标签图片 >
 					<div class="hotProductAd">
 						[@ad_position id = 6 /]
 					</div>
@@ -176,7 +176,7 @@ $().ready(function() {
 						[/#list]
 					</ul>
 					<!-- 标签 End-->
-					<!-- 标签图片 
+					<!-- 标签图片 >
 					<div class="newProductAd">
 						[@ad_position id = 7 /]
 					</div>
