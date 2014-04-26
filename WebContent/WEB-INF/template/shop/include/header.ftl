@@ -39,15 +39,21 @@ $().ready(function() {
 		}
 	});
 	/*DIY*/
-	$("#products").hover(
-		function(){$("#p_list").css("display","block");},
-		function(){$("#p_list").css("display","none");}
-	);
+	$("#products").bind('mouseover',function(){$("#p_list").slideDown('1500');});
 	
-	$("#p_list").hover(
-		function(){$("#p_list").css("display","block");},
-		function(){$("#p_list").css("display","none");}
-	);
+	$("#p_list").bind('mouseleave',function(){$("#p_list").slideUp('1500');});
+	
+	/*顶级菜单项的鼠标移入操作 */
+	$("#p_list>dl").bind('mouseover',function() { $(this).children('dd').slideDown('1500'); })
+					.bind('mouseleave',function(){ $(this).children('dd').slideUp('3000');}); 
+	/* 顶级菜单项的鼠标移出操作  */
+		
+			
+	/* 子菜单的鼠标移入操作  
+	$('#menu>ul>li>ul li').bind('mouseover',function(){ $(this).children('ul').slideDown('fast');})
+							// 子菜单的鼠标移出操作 
+						  .bind('mouseleave',function() { $(this).children('ul').slideUp('fast');}); 
+	//详细出处参考：http://www.jb51.net/article/24363.htm  */
 });
 </script>
 <div class="quick">
@@ -101,7 +107,7 @@ $().ready(function() {
         </div>
         <!--msg end-->
     	<div class="tp1">
-        	<div class="logo"><img src="${base}/resources/shop/images/logo_05.png" /></div>
+        	<div class="logo"><img src="${base}/resources/shop/images/logo_05.png" width="250px" height="70px"/></div>
             <!--logo end-->
             <div class="search">
     			<form id="productSearchForm" action="${base}/product/search.jhtml" method="get">
@@ -149,21 +155,21 @@ $().ready(function() {
         			<a href="${base}/product_category.jhtml">${message("shop.index.allProductCategory")}</a>
         		</h1>
 	            <div class="p_list" id="p_list" style="display:none;">
-	            	<dl>
-	            		[@product_category_root_list count = 6]
-						[#list productCategories as rootProductCategory]
+	            	[@product_category_root_list count = 6]
+	            	[#list productCategories as rootProductCategory]
+					<dl>
 						<!--<tr[#if !rootProductCategory_has_next] class="last"[/#if]>-->
 						<dt>
 							<b><a href="${base}${rootProductCategory.path}">${rootProductCategory.name}</a></b>
 						</dt>
-						<dd>
+						<dd style="display: none;">
 							[#list rootProductCategory.children as productCategory]
 							<a href="${base}${productCategory.path}">${productCategory.name}</a>&nbsp;&nbsp;
 							[/#list]
 						</dd>
-						[/#list]
-						[/@product_category_root_list]
-	                </dl>
+					</dl>
+					[/#list]
+					[/@product_category_root_list]
 	           </div>
             <!--p_list end-->
         </div>

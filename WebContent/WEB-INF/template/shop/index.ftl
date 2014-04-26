@@ -134,16 +134,16 @@ $().ready(function() {
 						[/#list]
 					</ul>
 					<!-- 标签 End-->
-					<!-- 标签图片 >
+					<!-- 标签图片 ><!-- 标签图片 End-->
 					<div class="hotProductAd">
 						[@ad_position id = 6 /]
 					</div>
-					<!-- 标签图片 End-->
+					
 					
 					<!-- 展示图片 -->
 					[#list productCategories as productCategory]
 						<ul class="tabContent">
-							[@product_list productCategoryId = productCategory.id tagIds = 1 count = 10][#--加载的产品数--]
+							[@product_list productCategoryId = productCategory.id tagIds = 1 count = 8][#--加载的产品数--]
 								[#list products as product]
 									<li>
 										<a href="${base}${product.path}" title="${product.name}" target="_blank"><img src="[#if product.image??]${product.image}[#else]${setting.defaultThumbnailProductImage}[/#if]" alt="${product.name}" /></a>
@@ -176,11 +176,11 @@ $().ready(function() {
 						[/#list]
 					</ul>
 					<!-- 标签 End-->
-					<!-- 标签图片 >
+					<!-- 标签图片 ><!-- 标签图片 End-->
 					<div class="newProductAd">
 						[@ad_position id = 7 /]
 					</div>
-					<!-- 标签图片 End-->
+					
 					
 					<!-- 展示图片 -->
 					[#list productCategories as productCategory]

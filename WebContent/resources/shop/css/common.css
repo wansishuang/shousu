@@ -716,7 +716,7 @@ div.path li.last {
 /* ---------- Header ---------- */
 
 div.header .logo {
-	height: 50px;
+	height: 70px;
 	overflow: hidden;
 }
 
@@ -853,6 +853,7 @@ div.header .search {
 	float:left;
 	line-height: 23px;
 	position: relative;
+	margin-top: 20px;
 }
 
 div.header .search .keyword {
@@ -1016,7 +1017,7 @@ div.pagination .pageBreak {
 .tp a:hover {color:#D62988;text-decoration: none;}
 .tp{width:100%;background:url(../images/topbg.png) repeat-x;height:196px;color:white;}
 .tp .header{width:990px;margin:0 auto;color:white;position:relative;z-index:500;}
-.tp .header .msg{width:100%;height:30px;line-height:30px;color:white;}
+.tp .header .msg{width:100%;height:10px;line-height:30px;color:white;}
 .tp .header .msg .mgleft{widht:30%;float:left;color:white;}
 .tp .header .msg .mgright{widht:422px;float:right;}
 .tp .header .msg .mgright li{float:left;}
@@ -1029,7 +1030,7 @@ div.pagination .pageBreak {
 .tp .header .tp1 .logo img,.top .header .tp .logo span{float:left;}
 .tp .header .tp1 .keyword{background:none;height:36px;width:327px;color:#969696;float:left;}
 .tp .header .tp1 .btn{background:none;height:36px;width:73px;cursor:pointer;float:right;outline:none;border:none;}
-.tp .header .tp1 .shopping{width:108px;height:36px;background:url(../images/shoppingcar_09.png) no-repeat;float:right;padding-left:52px;font:bold 12px/36px "宋体";color:white;cursor:pointer;line-height:36px;}
+.tp .header .tp1 .shopping{width:108px;height:36px;background:url(../images/shoppingcar_09.png) no-repeat;float:right;padding-left:52px;font:bold 12px/36px "宋体";color:white;cursor:pointer;line-height:36px;margin-top: 20px;}
 .tp .header .tp1 .shopping a{color:white;}
 .tp .header .tp1 .shopping span{color:#f9cd00;font-family:Arial, Helvetica, sans-serif;}
 /*tp end*/
@@ -1039,8 +1040,9 @@ div.pagination .pageBreak {
 .tp .header .classify h1{width:216px;height:38px;margin-top: 1px;padding-left:20px;font:bold 14px/39px "宋体";background:url(../images/fl_15.png) no-repeat;}
 .tp .header .classify h1 a{color:#eee;}
 .tp .header .classify .p_list{width:100%;background:white;padding-top:2px;border:1px solid #d3d3d3;}
-.tp .header .classify dl{margin:0 auto;color:#636363;line-height:22px;padding:0px 17px 0;}
-.tp .header .classify dl dt{width:199px;padding-top:5px;border-bottom: 1px solid;}
+.tp .header .classify dl{margin:0 auto;line-height:22px;}
+.tp .header a:hover,.tp .header .classify a:hover{color:#D62988;}
+.tp .header .classify dl dt{width:216px;padding-top:5px;padding-left: 20px;border-bottom: 1px solid #d5d5d5;}
 .tp .header .classify dl dt b{color:#333333;}
 .tp .header .classify dl a{color:#636363;}
 /*msg end*/
